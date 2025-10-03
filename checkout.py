@@ -1,3 +1,4 @@
+import os
 from appium import webdriver
 from appium.options.android.uiautomator2.base import UiAutomator2Options
 from appium.webdriver.common.appiumby import AppiumBy
@@ -32,8 +33,7 @@ for i in range(3):
 driver.find_element(AppiumBy.XPATH,'//android.view.ViewGroup[@content-desc="test-Cart"]/android.view.ViewGroup').click()
 
 # swipe to find button checkout
-
-
+os.system("adb shell input swipe 500 1500 500 500")
 driver.find_element(AppiumBy.XPATH,'//android.view.ViewGroup[@content-desc="test-CHECKOUT"]').click()
 
 # Chekout Information Page
@@ -43,7 +43,7 @@ driver.find_element(AppiumBy.XPATH,'//android.widget.EditText[@content-desc="tes
 driver.find_element(AppiumBy.XPATH,'//android.view.ViewGroup[@content-desc="test-CONTINUE"]').click()
 
 # Swipe to find button Finish
-
+os.system("adb shell input swipe 500 1500 500 500")
 # Checkout Overview Page
 driver.find_element(AppiumBy.XPATH,'//android.view.ViewGroup[@content-desc="test-FINISH"]').click()
 
